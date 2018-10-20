@@ -1,0 +1,3 @@
+message RoleLoginReq {  
+optional int64 playerId=1;
+}

@@ -1,18 +1,18 @@
 import { ClientBootStrap } from "./socket/ClientBootStrap";
-import { TestHandler } from "./handler/TestHandler";
+import { PacketCodec } from "./handler/PacketCodec";
 
 
- export class GameClient{
+export class GameClient {
 
-    constructor(url){
-        this.url=url;
+    constructor(url) {
+        this.url = url;
     }
-    connect(){
-        let bootstrap=new ClientBootStrap().handler(function(handlerChain){
-                handlerChain.addLast(new TestHandler());
+    connect() {
+        let bootstrap = new ClientBootStrap().handler(function (handlerChain) {
+            handlerChain.addLast(new PacketCodec());
         });
-       let channel= bootstrap.bind(this.url);
-      
+        return bootstrap.bind(this.url);
+
     }
 }
-new GameClient("ws://localhost:4010/ws").connect();
+let channel =new GameClient("ws://localhost:4010/ws").connect();

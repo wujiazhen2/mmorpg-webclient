@@ -11,8 +11,10 @@ export class ClientBootStrap {
     this.ws = new WebSocket(url);
     let handerChain = this.handerChain;
     this.channel.setWs(this.ws);
+    let started= false;
     this.ws.onopen = function () {
-      handerChain.fireOpen()
+      started=true;
+      handerChain.fireOpen();
     };
     this.ws.onmessage = function (evt) {
       handerChain.fireMessage(evt)
@@ -24,8 +26,10 @@ export class ClientBootStrap {
       handerChain.fireError(error)
     };
     this.ws.onwrite = function (msg) {
+      console.log(33333)
       handerChain.fireWrite(msg)
     }
+   
     return this.channel;
   }
 

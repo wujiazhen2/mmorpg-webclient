@@ -9,40 +9,43 @@ export class HandlerContext {
     setNext(handlerContext) {
         this.next = handlerContext;
     }
-    getNext() {
-        return this.next;
+    setPrev(handlerContext) {
+        this.prev = handlerContext;
     }
+
 
     
     fireMessage(evt) {
         if(this.next){
-            this.next.handler.onMessage(this, evt);
+            this.next.handler.onMessage(this.next, evt);
         }
     }
     
     fireOpen(evt) {
         if(this.next){
-        this.next.handler.onOpen(this, evt);
+        this.next.handler.onOpen(this.next, evt);
         }
     }
     
     fireClose(evt) {
         if(this.next){
-        this.next.handler.onClose(this, evt);
+        this.next.handler.onClose(this.next, evt);
         }
     }
     
     fireError(evt) {
         if(this.next){
-        this.next.handler.onError(this, evt);
+        this.next.handler.onError(this.next, evt);
         }
     }
     
-    fireWrite(evt) {
-        if(this.next){
-            this.next.handler.onWrite(this, evt);
+    fireWrite(msg) {
+        if(this.prev && this.prev.handler){
+           
+            this.prev.handler.onWrite(this.prev, msg);
         }else{
-            this.channel.ws.send(evt);
+            console.log(1111);
+            this.channel.ws.send(msg);
         }
     }
 

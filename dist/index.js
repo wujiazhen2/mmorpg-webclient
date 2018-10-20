@@ -26,11 +26,13 @@ var GameClient = exports.GameClient = function () {
             var bootstrap = new _ClientBootStrap.ClientBootStrap().handler(function (handlerChain) {
                 handlerChain.addLast(new _TestHandler.TestHandler());
             });
-            var channel = bootstrap.bind(this.url);
+            return bootstrap.bind(this.url);
         }
     }]);
 
     return GameClient;
 }();
 
-new GameClient("ws://localhost:4010/ws").connect();
+var channel = new GameClient("ws://localhost:4010/ws").connect();
+
+channel.sendMessage("sssss");
