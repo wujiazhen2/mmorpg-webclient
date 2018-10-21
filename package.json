@@ -19,7 +19,9 @@
   "homepage": "https://github.com/wujiazhen2/mmorpg-webclient#readme",
   "dependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
-    "nodejs-websocket": "^1.7.1"
+    "google-protobuf": "^3.6.1",
+    "nodejs-websocket": "^1.7.1",
+    "ws": "^6.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

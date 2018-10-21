@@ -42,7 +42,7 @@ export class HandlerContext {
     fireWrite(msg) {
         if(this.prev && this.prev.handler){
            
-            this.prev.handler.onWrite(this.prev, msg);
+            this.prev.handler.onWrite(trhis.prev, msg);
         }else{
             console.log(1111);
             this.channel.ws.send(msg);
