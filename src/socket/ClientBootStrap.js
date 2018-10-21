@@ -26,7 +26,7 @@ export class ClientBootStrap {
       handerChain.fireError(error)
     };
     this.ws.onwrite = function (msg) {
-      console.log(33333)
+      
       handerChain.fireWrite(msg)
     }
    

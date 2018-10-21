@@ -4,7 +4,7 @@ export class BaseHandler{
         handlerContext.fireOpen(msg);
     }
     onMessage(handlerContext,msg){
-        handlerContext.fireMessag(msg);
+        handlerContext.fireMessage(msg);
     }
     onClose(handlerContext,msg){
         handlerContext.fireClose(msg);

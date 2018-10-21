@@ -15,7 +15,13 @@ export class HanderChain {
         return this;
     }
     fireMessage(evt){
-        this.head.fireMessage(evt)
+        let reader=new FileReader();
+        reader.readAsArrayBuffer(evt.data)
+        let head=this.head;
+        reader.onload=(e)=>{  
+            head.fireMessage(reader.result)
+        }
+        
     }
     fireOpen(evt){
       

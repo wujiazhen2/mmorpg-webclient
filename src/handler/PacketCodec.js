@@ -1,25 +1,37 @@
 import { BaseHandler } from "../socket/BaseHandler";
 import { ByteBuf } from "../socket/ByteBuf";
-let proto = require("../proto/LoginReq_pb");
+import {protocalManager} from "../proto/ProtocalManager";
 
 export class PacketCodec extends BaseHandler {
     onOpen(handlerContext, msg) {
-        handlerContext.channel.write({account:"wujiazhen",pwd:"wujiazhen"});
         super.onOpen(handlerContext, msg);
     }
+    //解码
     onMessage(handlerContext, msg) {
+        console.log(msg);
+        let dv=new DataView(msg);
+        let length =dv.getInt32(0)
+        if(length>msg.byteLength){
+            //TODO 处理拆包
+        }
+        let protocalId=dv.getInt16(4);
+        let type=protocalManager.get(protocalId);
+        msg=type.deserializeBinary(msg.slice(6,msg.byteLength))
+        msg.messageId=protocalId;
         super.onMessage(handlerContext, msg);
     }
+    //编码
     onWrite(handlerContext, msg) {
-        let loginReq = new proto.LoginReq();
-        loginReq.setAccount("1111")
-        loginReq.setPwd("1111");
-        let req =loginReq.serializeBinary();
-        let byteBuf=new ByteBuf(req.byteLength+6);
-        byteBuf.setInt32(req.byteLength+6);
-        byteBuf.setInt16(11111);
-        byteBuf.setInt8Array(req);
-        super.onWrite(handlerContext, byteBuf.buffer);
+        if(msg.serializeBinary){
+            let req =msg.serializeBinary();
+            let byteBuf=new ByteBuf(req.byteLength+6);
+            byteBuf.setInt32(req.byteLength+6);
+            byteBuf.setInt16(msg.messageId);
+            byteBuf.setInt8Array(req);
+            super.onWrite(handlerContext, byteBuf.buffer);
+        }else{
+            super.onWrite(handlerContext,msg);
+        }
     }
 
 }
