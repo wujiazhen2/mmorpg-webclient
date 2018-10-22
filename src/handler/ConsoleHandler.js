@@ -17,6 +17,6 @@ export class ConsoleHandler extends BaseHandler{
         });
         p.innerHTML=str;
         this.context.appendChild(p);
-        super.onOpen(handerChannel,msg);
+        super.onMessage(handerChannel,msg);
     }
 }

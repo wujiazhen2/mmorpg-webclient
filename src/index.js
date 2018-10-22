@@ -15,7 +15,7 @@ export class GameClient {
             handlerChain.addLast(new ConsoleHandler());
             handlerChain.addLast(new LoginHandler());
         });
-        return bootstrap.bind(this.url);
+            return bootstrap.bind(this.url);
 
     }
 }

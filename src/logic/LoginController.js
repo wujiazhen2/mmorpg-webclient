@@ -13,7 +13,6 @@ class LoginController {
         ele.appendChild(button);
     }
     login(handlerContext) {
-        alert(111);
         const pwd=document.getElementById("pwd").value
         const account =document.getElementById("account").value
         let req=protocalManager.create(require("../proto/LoginReq_pb").LoginReq);

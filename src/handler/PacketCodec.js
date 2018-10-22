@@ -4,11 +4,12 @@ import {protocalManager} from "../proto/ProtocalManager";
 
 export class PacketCodec extends BaseHandler {
     onOpen(handlerContext, msg) {
+  
         super.onOpen(handlerContext, msg);
     }
     //解码
     onMessage(handlerContext, msg) {
-        console.log(msg);
+      
         let dv=new DataView(msg);
         let length =dv.getInt32(0)
         if(length>msg.byteLength){
