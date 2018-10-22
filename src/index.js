@@ -20,6 +20,4 @@ export class GameClient {
     }
 }
 export let channel =new GameClient("ws://localhost:4010/ws").connect();
-export function onLogin(){
-    alert("登录")
-}
+
