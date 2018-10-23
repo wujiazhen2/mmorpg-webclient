@@ -2,6 +2,7 @@ import { ClientBootStrap } from "./socket/ClientBootStrap";
 import { PacketCodec } from "./handler/PacketCodec";
 import { LoginHandler } from "./handler/LoginHandler";
 import { ConsoleHandler } from "./handler/ConsoleHandler";
+import { DispatchHandler } from "./handler/DispatchHandler";
 
 
 export class GameClient {
@@ -14,6 +15,7 @@ export class GameClient {
             handlerChain.addLast(new PacketCodec());
             handlerChain.addLast(new ConsoleHandler());
             handlerChain.addLast(new LoginHandler());
+            handlerChain.addLast(new DispatchHandler());
         });
             return bootstrap.bind(this.url);
 

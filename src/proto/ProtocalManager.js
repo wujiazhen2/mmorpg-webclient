@@ -5,6 +5,8 @@ class ProtocalManager{
         this.idToType=new Map();
         this.idToType.set(11111,proto.LoginReq);
         this.idToType.set(11112,proto.LoginResp);
+        this.idToType.set(11120,proto.RoleListReq);
+        this.idToType.set(11121,proto.RoleListResp);
         this.nameToType=new Map();
         let nameToType=this.nameToType;
         this.idToType.forEach(function(v,k,map){
