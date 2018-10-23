@@ -1,10 +1,10 @@
-
+global.proto=require("./proto_pb");
 class ProtocalManager{
 
     constructor(){
         this.idToType=new Map();
-        this.idToType.set(11111,require("./LoginReq_pb").LoginReq);
-        this.idToType.set(11112,require("./LoginResp_pb").LoginResp);
+        this.idToType.set(11111,proto.LoginReq);
+        this.idToType.set(11112,proto.LoginResp);
         this.nameToType=new Map();
         let nameToType=this.nameToType;
         this.idToType.forEach(function(v,k,map){

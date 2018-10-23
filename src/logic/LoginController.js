@@ -15,7 +15,7 @@ class LoginController {
     login(handlerContext) {
         const pwd=document.getElementById("pwd").value
         const account =document.getElementById("account").value
-        let req=protocalManager.create(require("../proto/LoginReq_pb").LoginReq);
+        let req=protocalManager.create(proto.LoginReq);
         req.setAccount(account);
         req.setPwd(pwd);
         handlerContext.channel.write(req);

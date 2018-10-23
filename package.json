@@ -20,6 +20,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "google-protobuf": "^3.6.1",
     "nodejs-websocket": "^1.7.1",
+    "protobufjs": "^6.8.8",
     "ws": "^6.1.0"
   },
   "devDependencies": {

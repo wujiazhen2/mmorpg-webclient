@@ -1,2 +1,3 @@
 message ErrorResp {  
+optional int32 messageId=1;
 }

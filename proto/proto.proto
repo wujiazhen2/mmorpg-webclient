@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+message CreateRoleReq {
+
+    RoleType role = 1;
+    int32 sex = 2;
+    string player_name = 3;
+}
+
+enum RoleType {
+
+    WARRIOR = 0;
+    HUNTER = 1;
+    TAOIST = 2;
+}
+
+message CreateRoleResp {
+
+    Status status = 1;
+    int64 id = 2;
+}
+
+message Status {
+
+    int32 code = 1;
+    int32 message_id = 2;
+}
+
+message ErrorResp {
+
+    int32 message_id = 1;
+}
+
+message LoginReq {
+
+    string account = 1;
+    string pwd = 2;
+}
+
+message LoginResp {
+
+    Status status = 1;
+}
+
+message MoveReq {
+
+    Position position = 1;
+    repeated Position path = 2;
+}
+
+message Position {
+
+    int32 x = 1;
+    int32 y = 2;
+}
+
+message PlayerEnterWorldResp {
+
+    int32 scene_id = 1;
+    int32 x = 2;
+    int32 y = 3;
+}
+
+message PlayerLoginResp {
+
+    Status status = 1;
+    int64 id = 2;
+}
+
+message PlayerStatusResp {
+
+    PlayerInfo player_info = 1;
+}
+
+message PlayerInfo {
+
+    int64 player_id = 1;
+    int32 level = 2;
+    RoleType role = 3;
+    int32 sex = 4;
+    string name = 5;
+    Position position = 6;
+}
+
+message RegionEnterResp {
+
+    repeated ObjectInfo object_infos = 1;
+}
+
+message ObjectInfo {
+
+    int64 object_id = 1;
+    int32 level = 2;
+    RoleType role = 3;
+    int32 sex = 4;
+    string name = 5;
+    Position position = 6;
+    ObjectType object_type = 7;
+}
+
+enum ObjectType {
+
+    PLAYER = 0;
+    MONSTER = 1;
+    NPC = 2;
+    PLACESKILL = 3;
+    GOODS = 4;
+}
+
+message RegionLevelResp {
+
+    int64 object_id = 1;
+}
+
+message RegisterAccountReq {
+
+    string account = 1;
+    string pwd = 2;
+}
+
+message RegisterAccountResp {
+
+    Status status = 1;
+}
+
+message RoleListReq {
+}
+
+message RoleListResp {
+
+    repeated PlayerInfo player_infos = 1;
+}
+
+message RoleLoginReq {
+
+    int64 player_id = 1;
+}
