@@ -1,5 +1,5 @@
 import { BaseHandler } from "../socket/BaseHandler";
-import {loginController} from "../logic/LoginController";
+import {loginController} from "../logic/controller/LoginController";
 
 export class LoginHandler extends BaseHandler{
 

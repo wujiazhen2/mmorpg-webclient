@@ -1,5 +1,4 @@
 import { BaseHandler } from "../socket/BaseHandler";
-import {listenerManager} from "../ListenerManager";
 import { protocalManager } from "../proto/ProtocalManager";
 import { handlers } from "../HandlerMapping";
 export class DispatchHandler extends BaseHandler{

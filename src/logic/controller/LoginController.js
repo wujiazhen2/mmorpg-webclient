@@ -1,6 +1,5 @@
-import {protocalManager} from "../proto/ProtocalManager";
-import {listenerManager} from "../ListenerManager";
-import { gameContext } from "../GameContext";
+import {protocalManager} from "../../proto/ProtocalManager";
+import { gameContext } from "../../GameContext";
 class LoginController {
     logResp(channel,resp){
         if(resp.getStatus().getCode()===200){
