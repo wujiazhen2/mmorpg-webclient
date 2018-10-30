@@ -7,7 +7,7 @@ import MapObject from "./MapObject";
   /**
    * 简易的帧动画类实现
    */
-  export default class Animation extends MapObject {
+  export default class BiologyObject extends MapObject {
     constructor(imgSrc, width, height) {
       super(imgSrc, width, height)
   
