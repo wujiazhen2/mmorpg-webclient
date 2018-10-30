@@ -8,3 +8,4 @@ export const handlers=new Map();
 handlers.set(proto.LoginResp,loginController.logResp);
 handlers.set(proto.RoleListResp,roleController.roleList); 
 handlers.set(proto.RegionEnterResp,positionController.regionUpdate); 
+handlers.set(proto.CreateRoleResp,roleController.createRoleResp); 

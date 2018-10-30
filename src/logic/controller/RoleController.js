@@ -7,7 +7,6 @@ import { protocalManager } from "../../proto/ProtocalManager";
 
 class RoleController {
     roleList(channel, resp) {
-        gameContext.clear();
         const roles = new Map();
         roles.set(0, "战士");
         roles.set(1, "猎手");
@@ -67,14 +66,14 @@ class RoleController {
         const name=document.getElementById("name").value;
         const sexs=document.getElementsByName("sex");
         let sex=0;
-        for(x in sexs){
+        for(let x in sexs){
             if(x.checked){
                 sex=x.value;
             }
         }
         const roles=document.getElementsByName("role");
         let role =0;
-        for(x in roles){
+        for(let x in roles){
             if(x.checked){
                 role=x.value;
             }
@@ -89,6 +88,14 @@ class RoleController {
         const roleLoginReq = protocalManager.create(proto.RoleLoginReq);
         roleLoginReq.setPlayerId(playerId);
         channel.write(roleLoginReq);
+    }
+    createRoleResp(channel,resp){
+        if(resp.getStatus().getCode()===200){
+            const roleListReq=protocalManager.create(proto.RoleListReq);
+            channel.write(roleListReq);
+        }else{
+            gameContext.appenderMsg("验证失败");
+        }
     }
 
 }
