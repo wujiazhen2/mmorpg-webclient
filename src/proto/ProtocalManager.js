@@ -30,7 +30,7 @@ class ProtocalManager{
         //移动请求
         this.idToType.set(11122,proto.MoveReq);
         //玩家进去消息区域广播
-        this.idToType.set(11123,proto.PlayerStatusResp);
+        this.idToType.set(11123,proto.ObjectEnterSyncResp);
         //进入新区域同步
         this.idToType.set(11124,proto.RegionEnterResp);
         //退出区域

@@ -3,8 +3,3 @@ optional RoleType role=1;
 optional int32 sex=2;
 optional string playerName=3;
 }
-enum RoleType {  
-WARRIOR=0;
-HUNTER=1;
-TAOIST=2;
-}

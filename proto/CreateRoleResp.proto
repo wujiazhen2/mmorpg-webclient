@@ -2,7 +2,3 @@ message CreateRoleResp {
 optional Status status=1;
 optional int64 id=2;
 }
-message Status {  
-optional int32 code=1;
-optional int32 messageId=2;
-}
