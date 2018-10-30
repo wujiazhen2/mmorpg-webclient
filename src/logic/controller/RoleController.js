@@ -36,32 +36,54 @@ class RoleController {
         eles.push((
             <div>
                 <div>
-                    <label for="name">
+                    <label for={"name"}>
                         角色名：
                    </label>
-                    <input id="name" name="name" type="input" />
+                    <input id={"name"} name={"name"} type={"input"} />
                 </div>
                 <div>
-                    <label for="sex">
+                    <label for={"sex"}>
                         性别：
                      </label>
-                    <input  name="sex" type="radio" value="0">男</input>
-                    <input  name="sex" type="radio" value="1">女</input>
+                    <input  name={"sex"} type={"radio"} value={"0"}/>男
+                    <input  name={"sex"} type={"radio"} value={"1"}/>女
                 </div>
                 <div>
-                    <label for="role">
+                    <label for={"role"}>
                         角色:
                      </label>
-                    <input  name="role" type="radio" value="0">战士</input>
-                    <input  name="role" type="radio" value="1">猎手</input>
-                    <input  name="role" type="radio" value="2">法师</input>
+                    <input  name={"role"} type={"radio"} value={"0"}/>战士
+                    <input  name={"role"} type={"radio"} value={"1"}/>猎手
+                    <input  name={"role"} type={"radio"} value={"2"}/>法师
                 </div>
             </div>
         ))
         eles.push((
-            <button onClick={roleController.creatRoleView.bind(this, channel)}>创建</button>
+            <button onClick={roleController.createRole.bind(this, channel)}>创建</button>
         ))
         ReactDOM.render(eles, gameContext.gameArea)
+    }
+    createRole(channel){
+        const name=document.getElementById("name").value;
+        const sexs=document.getElementsByName("sex");
+        let sex=0;
+        for(x in sexs){
+            if(x.checked){
+                sex=x.value;
+            }
+        }
+        const roles=document.getElementsByName("role");
+        let role =0;
+        for(x in roles){
+            if(x.checked){
+                role=x.value;
+            }
+        }
+        const createRoleReq=protocalManager.create(proto.CreateRoleReq)
+        createRoleReq.setRole(role);
+        createRoleReq.setSex(sex);
+        createRoleReq.setPlayerName(name);
+        channel.write(createRoleReq)
     }
     enterWorld(channel, playerId) {
         const roleLoginReq = protocalManager.create(proto.RoleLoginReq);

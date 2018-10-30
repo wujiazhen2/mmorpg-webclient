@@ -1,0 +1,137 @@
+syntax = "proto2";
+
+message CreateRoleReq {
+
+    optional RoleType role = 1;
+    optional int32 sex = 2;
+    optional string player_name = 3;
+}
+
+enum RoleType {
+
+    WARRIOR = 0;
+    HUNTER = 1;
+    TAOIST = 2;
+}
+
+message CreateRoleResp {
+
+    optional Status status = 1;
+    optional int64 id = 2;
+}
+
+message Status {
+
+    optional int32 code = 1;
+    optional int32 message_id = 2;
+}
+
+message ErrorResp {
+
+    optional int32 message_id = 1;
+}
+
+message LoginReq {
+
+    optional string account = 1;
+    optional string pwd = 2;
+}
+
+message LoginResp {
+
+    optional Status status = 1;
+}
+
+message MoveReq {
+
+    optional Position position = 1;
+    repeated Position path = 2;
+}
+
+message Position {
+
+    optional int32 x = 1;
+    optional int32 y = 2;
+}
+
+message PlayerEnterWorldResp {
+
+    optional int32 scene_id = 1;
+    optional int32 x = 2;
+    optional int32 y = 3;
+}
+
+message PlayerLoginResp {
+
+    optional Status status = 1;
+    optional int64 id = 2;
+}
+
+message PlayerStatusResp {
+
+    optional PlayerInfo player_info = 1;
+}
+
+message PlayerInfo {
+
+    optional int64 player_id = 1;
+    optional int32 level = 2;
+    optional RoleType role = 3;
+    optional int32 sex = 4;
+    optional string name = 5;
+    optional Position position = 6;
+}
+
+message RegionEnterResp {
+
+    repeated ObjectInfo object_infos = 1;
+}
+
+message ObjectInfo {
+
+    optional int64 object_id = 1;
+    optional int32 level = 2;
+    optional RoleType role = 3;
+    optional int32 sex = 4;
+    optional string name = 5;
+    optional Position position = 6;
+    optional ObjectType object_type = 7;
+}
+
+enum ObjectType {
+
+    PLAYER = 0;
+    MONSTER = 1;
+    NPC = 2;
+    PLACESKILL = 3;
+    GOODS = 4;
+}
+
+message RegionLevelResp {
+
+    optional int64 object_id = 1;
+}
+
+message RegisterAccountReq {
+
+    optional string account = 1;
+    optional string pwd = 2;
+}
+
+message RegisterAccountResp {
+
+    optional Status status = 1;
+}
+
+message RoleListReq {
+}
+
+message RoleListResp {
+
+    repeated PlayerInfo player_infos = 1;
+}
+
+message RoleLoginReq {
+
+    optional int64 player_id = 1;
+}

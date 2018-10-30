@@ -80,9 +80,9 @@ proto.CreateRoleReq.prototype.toObject = function(opt_includeInstance) {
  */
 proto.CreateRoleReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    sex: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    playerName: jspb.Message.getFieldWithDefault(msg, 3, "")
+    role: jspb.Message.getField(msg, 1),
+    sex: jspb.Message.getField(msg, 2),
+    playerName: jspb.Message.getField(msg, 3)
   };
 
   if (includeInstance) {
@@ -160,22 +160,22 @@ proto.CreateRoleReq.prototype.serializeBinary = function() {
  */
 proto.CreateRoleReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRole();
-  if (f !== 0.0) {
+  f = /** @type {!proto.RoleType} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeEnum(
       1,
       f
     );
   }
-  f = message.getSex();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt32(
       2,
       f
     );
   }
-  f = message.getPlayerName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
     writer.writeString(
       3,
       f
@@ -195,7 +195,21 @@ proto.CreateRoleReq.prototype.getRole = function() {
 
 /** @param {!proto.RoleType} value */
 proto.CreateRoleReq.prototype.setRole = function(value) {
-  jspb.Message.setProto3EnumField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.CreateRoleReq.prototype.clearRole = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.CreateRoleReq.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -210,7 +224,21 @@ proto.CreateRoleReq.prototype.getSex = function() {
 
 /** @param {number} value */
 proto.CreateRoleReq.prototype.setSex = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.CreateRoleReq.prototype.clearSex = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.CreateRoleReq.prototype.hasSex = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -225,7 +253,21 @@ proto.CreateRoleReq.prototype.getPlayerName = function() {
 
 /** @param {string} value */
 proto.CreateRoleReq.prototype.setPlayerName = function(value) {
-  jspb.Message.setProto3StringField(this, 3, value);
+  jspb.Message.setField(this, 3, value);
+};
+
+
+proto.CreateRoleReq.prototype.clearPlayerName = function() {
+  jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.CreateRoleReq.prototype.hasPlayerName = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -277,7 +319,7 @@ proto.CreateRoleResp.prototype.toObject = function(opt_includeInstance) {
 proto.CreateRoleResp.toObject = function(includeInstance, msg) {
   var f, obj = {
     status: (f = msg.getStatus()) && proto.Status.toObject(includeInstance, f),
-    id: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    id: jspb.Message.getField(msg, 2)
   };
 
   if (includeInstance) {
@@ -360,8 +402,8 @@ proto.CreateRoleResp.serializeBinaryToWriter = function(message, writer) {
       proto.Status.serializeBinaryToWriter
     );
   }
-  f = message.getId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt64(
       2,
       f
@@ -411,7 +453,21 @@ proto.CreateRoleResp.prototype.getId = function() {
 
 /** @param {number} value */
 proto.CreateRoleResp.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.CreateRoleResp.prototype.clearId = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.CreateRoleResp.prototype.hasId = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -462,8 +518,8 @@ proto.Status.prototype.toObject = function(opt_includeInstance) {
  */
 proto.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
-    code: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    messageId: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    code: jspb.Message.getField(msg, 1),
+    messageId: jspb.Message.getField(msg, 2)
   };
 
   if (includeInstance) {
@@ -537,15 +593,15 @@ proto.Status.prototype.serializeBinary = function() {
  */
 proto.Status.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getCode();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getMessageId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt32(
       2,
       f
@@ -565,7 +621,21 @@ proto.Status.prototype.getCode = function() {
 
 /** @param {number} value */
 proto.Status.prototype.setCode = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.Status.prototype.clearCode = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.Status.prototype.hasCode = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -580,7 +650,21 @@ proto.Status.prototype.getMessageId = function() {
 
 /** @param {number} value */
 proto.Status.prototype.setMessageId = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.Status.prototype.clearMessageId = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.Status.prototype.hasMessageId = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -631,7 +715,7 @@ proto.ErrorResp.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ErrorResp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    messageId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    messageId: jspb.Message.getField(msg, 1)
   };
 
   if (includeInstance) {
@@ -701,8 +785,8 @@ proto.ErrorResp.prototype.serializeBinary = function() {
  */
 proto.ErrorResp.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMessageId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt32(
       1,
       f
@@ -722,7 +806,21 @@ proto.ErrorResp.prototype.getMessageId = function() {
 
 /** @param {number} value */
 proto.ErrorResp.prototype.setMessageId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.ErrorResp.prototype.clearMessageId = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ErrorResp.prototype.hasMessageId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -773,8 +871,8 @@ proto.LoginReq.prototype.toObject = function(opt_includeInstance) {
  */
 proto.LoginReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    account: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pwd: jspb.Message.getFieldWithDefault(msg, 2, "")
+    account: jspb.Message.getField(msg, 1),
+    pwd: jspb.Message.getField(msg, 2)
   };
 
   if (includeInstance) {
@@ -848,15 +946,15 @@ proto.LoginReq.prototype.serializeBinary = function() {
  */
 proto.LoginReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAccount();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPwd();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeString(
       2,
       f
@@ -876,7 +974,21 @@ proto.LoginReq.prototype.getAccount = function() {
 
 /** @param {string} value */
 proto.LoginReq.prototype.setAccount = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.LoginReq.prototype.clearAccount = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.LoginReq.prototype.hasAccount = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -891,7 +1003,21 @@ proto.LoginReq.prototype.getPwd = function() {
 
 /** @param {string} value */
 proto.LoginReq.prototype.setPwd = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.LoginReq.prototype.clearPwd = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.LoginReq.prototype.hasPwd = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1313,8 +1439,8 @@ proto.Position.prototype.toObject = function(opt_includeInstance) {
  */
 proto.Position.toObject = function(includeInstance, msg) {
   var f, obj = {
-    x: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    y: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    x: jspb.Message.getField(msg, 1),
+    y: jspb.Message.getField(msg, 2)
   };
 
   if (includeInstance) {
@@ -1388,15 +1514,15 @@ proto.Position.prototype.serializeBinary = function() {
  */
 proto.Position.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getX();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getY();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt32(
       2,
       f
@@ -1416,7 +1542,21 @@ proto.Position.prototype.getX = function() {
 
 /** @param {number} value */
 proto.Position.prototype.setX = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.Position.prototype.clearX = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.Position.prototype.hasX = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1431,7 +1571,21 @@ proto.Position.prototype.getY = function() {
 
 /** @param {number} value */
 proto.Position.prototype.setY = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.Position.prototype.clearY = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.Position.prototype.hasY = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1482,9 +1636,9 @@ proto.PlayerEnterWorldResp.prototype.toObject = function(opt_includeInstance) {
  */
 proto.PlayerEnterWorldResp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sceneId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    x: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    y: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    sceneId: jspb.Message.getField(msg, 1),
+    x: jspb.Message.getField(msg, 2),
+    y: jspb.Message.getField(msg, 3)
   };
 
   if (includeInstance) {
@@ -1562,22 +1716,22 @@ proto.PlayerEnterWorldResp.prototype.serializeBinary = function() {
  */
 proto.PlayerEnterWorldResp.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSceneId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getX();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt32(
       2,
       f
     );
   }
-  f = message.getY();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
     writer.writeInt32(
       3,
       f
@@ -1597,7 +1751,21 @@ proto.PlayerEnterWorldResp.prototype.getSceneId = function() {
 
 /** @param {number} value */
 proto.PlayerEnterWorldResp.prototype.setSceneId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.PlayerEnterWorldResp.prototype.clearSceneId = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerEnterWorldResp.prototype.hasSceneId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1612,7 +1780,21 @@ proto.PlayerEnterWorldResp.prototype.getX = function() {
 
 /** @param {number} value */
 proto.PlayerEnterWorldResp.prototype.setX = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.PlayerEnterWorldResp.prototype.clearX = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerEnterWorldResp.prototype.hasX = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1627,7 +1809,21 @@ proto.PlayerEnterWorldResp.prototype.getY = function() {
 
 /** @param {number} value */
 proto.PlayerEnterWorldResp.prototype.setY = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  jspb.Message.setField(this, 3, value);
+};
+
+
+proto.PlayerEnterWorldResp.prototype.clearY = function() {
+  jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerEnterWorldResp.prototype.hasY = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -1679,7 +1875,7 @@ proto.PlayerLoginResp.prototype.toObject = function(opt_includeInstance) {
 proto.PlayerLoginResp.toObject = function(includeInstance, msg) {
   var f, obj = {
     status: (f = msg.getStatus()) && proto.Status.toObject(includeInstance, f),
-    id: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    id: jspb.Message.getField(msg, 2)
   };
 
   if (includeInstance) {
@@ -1762,8 +1958,8 @@ proto.PlayerLoginResp.serializeBinaryToWriter = function(message, writer) {
       proto.Status.serializeBinaryToWriter
     );
   }
-  f = message.getId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt64(
       2,
       f
@@ -1813,7 +2009,21 @@ proto.PlayerLoginResp.prototype.getId = function() {
 
 /** @param {number} value */
 proto.PlayerLoginResp.prototype.setId = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.PlayerLoginResp.prototype.clearId = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerLoginResp.prototype.hasId = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2023,11 +2233,11 @@ proto.PlayerInfo.prototype.toObject = function(opt_includeInstance) {
  */
 proto.PlayerInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    playerId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    level: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    role: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    sex: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    playerId: jspb.Message.getField(msg, 1),
+    level: jspb.Message.getField(msg, 2),
+    role: jspb.Message.getField(msg, 3),
+    sex: jspb.Message.getField(msg, 4),
+    name: jspb.Message.getField(msg, 5),
     position: (f = msg.getPosition()) && proto.Position.toObject(includeInstance, f)
   };
 
@@ -2119,36 +2329,36 @@ proto.PlayerInfo.prototype.serializeBinary = function() {
  */
 proto.PlayerInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPlayerId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt64(
       1,
       f
     );
   }
-  f = message.getLevel();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt32(
       2,
       f
     );
   }
-  f = message.getRole();
-  if (f !== 0.0) {
+  f = /** @type {!proto.RoleType} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
     writer.writeEnum(
       3,
       f
     );
   }
-  f = message.getSex();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
     writer.writeInt32(
       4,
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
     writer.writeString(
       5,
       f
@@ -2176,7 +2386,21 @@ proto.PlayerInfo.prototype.getPlayerId = function() {
 
 /** @param {number} value */
 proto.PlayerInfo.prototype.setPlayerId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.PlayerInfo.prototype.clearPlayerId = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerInfo.prototype.hasPlayerId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -2191,7 +2415,21 @@ proto.PlayerInfo.prototype.getLevel = function() {
 
 /** @param {number} value */
 proto.PlayerInfo.prototype.setLevel = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.PlayerInfo.prototype.clearLevel = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerInfo.prototype.hasLevel = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2206,7 +2444,21 @@ proto.PlayerInfo.prototype.getRole = function() {
 
 /** @param {!proto.RoleType} value */
 proto.PlayerInfo.prototype.setRole = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  jspb.Message.setField(this, 3, value);
+};
+
+
+proto.PlayerInfo.prototype.clearRole = function() {
+  jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerInfo.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -2221,7 +2473,21 @@ proto.PlayerInfo.prototype.getSex = function() {
 
 /** @param {number} value */
 proto.PlayerInfo.prototype.setSex = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  jspb.Message.setField(this, 4, value);
+};
+
+
+proto.PlayerInfo.prototype.clearSex = function() {
+  jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerInfo.prototype.hasSex = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -2236,7 +2502,21 @@ proto.PlayerInfo.prototype.getName = function() {
 
 /** @param {string} value */
 proto.PlayerInfo.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  jspb.Message.setField(this, 5, value);
+};
+
+
+proto.PlayerInfo.prototype.clearName = function() {
+  jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.PlayerInfo.prototype.hasName = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -2485,13 +2765,13 @@ proto.ObjectInfo.prototype.toObject = function(opt_includeInstance) {
  */
 proto.ObjectInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    objectId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    level: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    role: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    sex: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    objectId: jspb.Message.getField(msg, 1),
+    level: jspb.Message.getField(msg, 2),
+    role: jspb.Message.getField(msg, 3),
+    sex: jspb.Message.getField(msg, 4),
+    name: jspb.Message.getField(msg, 5),
     position: (f = msg.getPosition()) && proto.Position.toObject(includeInstance, f),
-    objectType: jspb.Message.getFieldWithDefault(msg, 7, 0)
+    objectType: jspb.Message.getField(msg, 7)
   };
 
   if (includeInstance) {
@@ -2586,36 +2866,36 @@ proto.ObjectInfo.prototype.serializeBinary = function() {
  */
 proto.ObjectInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getObjectId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt64(
       1,
       f
     );
   }
-  f = message.getLevel();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeInt32(
       2,
       f
     );
   }
-  f = message.getRole();
-  if (f !== 0.0) {
+  f = /** @type {!proto.RoleType} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
     writer.writeEnum(
       3,
       f
     );
   }
-  f = message.getSex();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
     writer.writeInt32(
       4,
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
     writer.writeString(
       5,
       f
@@ -2629,8 +2909,8 @@ proto.ObjectInfo.serializeBinaryToWriter = function(message, writer) {
       proto.Position.serializeBinaryToWriter
     );
   }
-  f = message.getObjectType();
-  if (f !== 0.0) {
+  f = /** @type {!proto.ObjectType} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
     writer.writeEnum(
       7,
       f
@@ -2650,7 +2930,21 @@ proto.ObjectInfo.prototype.getObjectId = function() {
 
 /** @param {number} value */
 proto.ObjectInfo.prototype.setObjectId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.ObjectInfo.prototype.clearObjectId = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ObjectInfo.prototype.hasObjectId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -2665,7 +2959,21 @@ proto.ObjectInfo.prototype.getLevel = function() {
 
 /** @param {number} value */
 proto.ObjectInfo.prototype.setLevel = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.ObjectInfo.prototype.clearLevel = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ObjectInfo.prototype.hasLevel = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -2680,7 +2988,21 @@ proto.ObjectInfo.prototype.getRole = function() {
 
 /** @param {!proto.RoleType} value */
 proto.ObjectInfo.prototype.setRole = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
+  jspb.Message.setField(this, 3, value);
+};
+
+
+proto.ObjectInfo.prototype.clearRole = function() {
+  jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ObjectInfo.prototype.hasRole = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -2695,7 +3017,21 @@ proto.ObjectInfo.prototype.getSex = function() {
 
 /** @param {number} value */
 proto.ObjectInfo.prototype.setSex = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  jspb.Message.setField(this, 4, value);
+};
+
+
+proto.ObjectInfo.prototype.clearSex = function() {
+  jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ObjectInfo.prototype.hasSex = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -2710,7 +3046,21 @@ proto.ObjectInfo.prototype.getName = function() {
 
 /** @param {string} value */
 proto.ObjectInfo.prototype.setName = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  jspb.Message.setField(this, 5, value);
+};
+
+
+proto.ObjectInfo.prototype.clearName = function() {
+  jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ObjectInfo.prototype.hasName = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -2755,7 +3105,21 @@ proto.ObjectInfo.prototype.getObjectType = function() {
 
 /** @param {!proto.ObjectType} value */
 proto.ObjectInfo.prototype.setObjectType = function(value) {
-  jspb.Message.setProto3EnumField(this, 7, value);
+  jspb.Message.setField(this, 7, value);
+};
+
+
+proto.ObjectInfo.prototype.clearObjectType = function() {
+  jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.ObjectInfo.prototype.hasObjectType = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -2806,7 +3170,7 @@ proto.RegionLevelResp.prototype.toObject = function(opt_includeInstance) {
  */
 proto.RegionLevelResp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    objectId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    objectId: jspb.Message.getField(msg, 1)
   };
 
   if (includeInstance) {
@@ -2876,8 +3240,8 @@ proto.RegionLevelResp.prototype.serializeBinary = function() {
  */
 proto.RegionLevelResp.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getObjectId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt64(
       1,
       f
@@ -2897,7 +3261,21 @@ proto.RegionLevelResp.prototype.getObjectId = function() {
 
 /** @param {number} value */
 proto.RegionLevelResp.prototype.setObjectId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.RegionLevelResp.prototype.clearObjectId = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.RegionLevelResp.prototype.hasObjectId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -2948,8 +3326,8 @@ proto.RegisterAccountReq.prototype.toObject = function(opt_includeInstance) {
  */
 proto.RegisterAccountReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    account: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    pwd: jspb.Message.getFieldWithDefault(msg, 2, "")
+    account: jspb.Message.getField(msg, 1),
+    pwd: jspb.Message.getField(msg, 2)
   };
 
   if (includeInstance) {
@@ -3023,15 +3401,15 @@ proto.RegisterAccountReq.prototype.serializeBinary = function() {
  */
 proto.RegisterAccountReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAccount();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getPwd();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeString(
       2,
       f
@@ -3051,7 +3429,21 @@ proto.RegisterAccountReq.prototype.getAccount = function() {
 
 /** @param {string} value */
 proto.RegisterAccountReq.prototype.setAccount = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.RegisterAccountReq.prototype.clearAccount = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.RegisterAccountReq.prototype.hasAccount = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3066,7 +3458,21 @@ proto.RegisterAccountReq.prototype.getPwd = function() {
 
 /** @param {string} value */
 proto.RegisterAccountReq.prototype.setPwd = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  jspb.Message.setField(this, 2, value);
+};
+
+
+proto.RegisterAccountReq.prototype.clearPwd = function() {
+  jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.RegisterAccountReq.prototype.hasPwd = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3560,7 +3966,7 @@ proto.RoleLoginReq.prototype.toObject = function(opt_includeInstance) {
  */
 proto.RoleLoginReq.toObject = function(includeInstance, msg) {
   var f, obj = {
-    playerId: jspb.Message.getFieldWithDefault(msg, 1, 0)
+    playerId: jspb.Message.getField(msg, 1)
   };
 
   if (includeInstance) {
@@ -3630,8 +4036,8 @@ proto.RoleLoginReq.prototype.serializeBinary = function() {
  */
 proto.RoleLoginReq.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPlayerId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeInt64(
       1,
       f
@@ -3651,7 +4057,21 @@ proto.RoleLoginReq.prototype.getPlayerId = function() {
 
 /** @param {number} value */
 proto.RoleLoginReq.prototype.setPlayerId = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setField(this, 1, value);
+};
+
+
+proto.RoleLoginReq.prototype.clearPlayerId = function() {
+  jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {!boolean}
+ */
+proto.RoleLoginReq.prototype.hasPlayerId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
