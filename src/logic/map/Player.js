@@ -7,13 +7,10 @@ export class Player extends BiologyObject{
 
     constructor(){
         super(img, WIDTH, HIEGHT)
-        this.x=50;
-        this.y=50;
+        this.x=canvas.width/3;
+        this.y=canvas.height/2;
     }
-    startMove(x,y){
-      this.x+=5;
-      this.y+=5;
-    }
+  
     drawToCanvas(ctx) {
         if ( !this.visible )
           return
@@ -22,8 +19,8 @@ export class Player extends BiologyObject{
         ctx.drawImage(
           this.img,
           0,0,WIDTH,HIEGHT,
-          this.x,
-          this.y,
+          canvas.width/3,
+          canvas.height/2,
           WIDTH,
           HIEGHT
         )

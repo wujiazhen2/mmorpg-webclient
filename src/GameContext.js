@@ -19,7 +19,7 @@ class GameContext{
     }
     createCanvas(){
         ReactDOM.render((
-            <canvas id="canvas" width="600" height="600">抱歉，您的浏览器不支持canvas元素</canvas>
+            <canvas id="canvas" width="700" height="300">抱歉，您的浏览器不支持canvas元素</canvas>
         ),gameContext.gameArea)
         window.canvas=document.getElementById("canvas");
     }
