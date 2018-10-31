@@ -7,7 +7,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-var jspb = require('C:/Users/Administrator/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/google-protobuf');
+var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 

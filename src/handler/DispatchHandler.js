@@ -4,8 +4,6 @@ import { handlers } from "../HandlerMapping";
 export class DispatchHandler extends BaseHandler{
 
     onMessage(handlerContext,msg){
-        console.log(msg)
-        console.log(handlers)
         const func=handlers.get(protocalManager.get(msg.messageId));
         if(func){
         func(handlerContext.channel,msg);

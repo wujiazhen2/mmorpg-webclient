@@ -1,4 +1,5 @@
-
+import ReactDOM from "react-dom";
+import React from "react";
 class GameContext{
 
     constructor(){
@@ -16,11 +17,11 @@ class GameContext{
     appenderElement(e){
         this.gameArea.appendChild(e);
     }
-    canvas(){
+    createCanvas(){
         ReactDOM.render((
             <canvas id="canvas" width="600" height="600">抱歉，您的浏览器不支持canvas元素</canvas>
         ),gameContext.gameArea)
-        global.canvas=document.getElementById(canvas);
+        window.canvas=document.getElementById("canvas");
     }
 }
 export const gameContext =new GameContext();
