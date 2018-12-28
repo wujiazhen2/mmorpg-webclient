@@ -10,3 +10,4 @@ handlers.set(proto.RoleListResp,roleController.roleList);
 handlers.set(proto.RegionEnterResp,mapController.regionUpdate); 
 handlers.set(proto.CreateRoleResp,roleController.createRoleResp); 
 handlers.set(proto.PlayerEnterWorldResp,mapController.enterWorldResp); 
+handlers.set(proto.RegisterAccountResp,loginController.registerResp);
